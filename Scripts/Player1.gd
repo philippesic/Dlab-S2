@@ -2,6 +2,9 @@ extends KinematicBody2D
 
 #Galaga Player
 
+onready var bullet = preload("res://Scenes/Bullet.tscn")
+var shot
+
 const SPEED = 400
 const ACCELERATION = 99999
 const FRICTION = 99999
@@ -40,8 +43,14 @@ func move_state(delta):
 		velocity = velocity.move_toward(input_vector * SPEED, ACCELERATION * delta)
 	else:
 		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
+		
+	if Input.is_action_just_pressed("lmb"):
+		shoot()
 
 	velocity = move_and_slide(velocity)
 	
 func shoot():
-	pass
+	shot = bullet.instance()
+	get_parent().add_child(shot)
+	shot.position = $BulletSpawn.global_position
+	shot.velocity = $Target.global_position - shot.position

@@ -54,3 +54,7 @@ func shoot():
 	get_parent().add_child(shot)
 	shot.position = $BulletSpawn.global_position
 	shot.velocity = $Target.global_position - shot.position
+
+
+func _on_Area2D_area_entered(area):
+	state = DEAD

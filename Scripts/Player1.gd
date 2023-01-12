@@ -5,6 +5,10 @@ extends KinematicBody2D
 onready var bullet = preload("res://Scenes/Bullet.tscn")
 var shot
 
+signal onShoot
+
+onready var ammo = 20
+
 const SPEED = 400
 const ACCELERATION = 99999
 const FRICTION = 99999
@@ -45,7 +49,9 @@ func move_state(delta):
 		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
 		
 	if Input.is_action_just_pressed("lmb"):
-		shoot()
+		if ammo > 0:
+			shoot()
+			emit_signal("onShoot")
 
 	velocity = move_and_slide(velocity)
 	
@@ -54,7 +60,15 @@ func shoot():
 	get_parent().add_child(shot)
 	shot.position = $BulletSpawn.global_position
 	shot.velocity = $Target.global_position - shot.position
+	ammo -= 1
 
 
-func _on_Area2D_area_entered(area):
+func _on_Area2D_area_entered(_area):
 	state = DEAD
+
+
+func _on_DeathArea_area_entered(_area):
+	state = DEAD
+
+func _on_Level1_updateAmmo():
+	ammo += 2

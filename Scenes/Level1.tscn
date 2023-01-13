@@ -1,8 +1,8 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Assets/Background.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Player1.gd" type="Script" id=2]
-[ext_resource path="res://Assets/icon.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Player.png" type="Texture" id=3]
 [ext_resource path="res://Scripts/ScoreController.gd" type="Script" id=5]
 [ext_resource path="res://Scripts/Level1.gd" type="Script" id=8]
 [ext_resource path="res://Scripts/Ammo.gd" type="Script" id=9]
@@ -10,17 +10,65 @@
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 1101, 66.5 )
 
+[sub_resource type="AtlasTexture" id=4]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 150, 150 )
+
+[sub_resource type="AtlasTexture" id=5]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 150, 0, 150, 150 )
+
+[sub_resource type="AtlasTexture" id=6]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 300, 0, 150, 150 )
+
+[sub_resource type="AtlasTexture" id=7]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 450, 0, 150, 150 )
+
+[sub_resource type="AtlasTexture" id=8]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 600, 0, 150, 150 )
+
+[sub_resource type="AtlasTexture" id=9]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 750, 0, 150, 150 )
+
+[sub_resource type="AtlasTexture" id=10]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 900, 0, 150, 150 )
+
+[sub_resource type="AtlasTexture" id=11]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 1050, 0, 150, 150 )
+
+[sub_resource type="SpriteFrames" id=12]
+animations = [ {
+"frames": [ SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 8.0
+} ]
+
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 0.19802, 0.811392 )
+extents = Vector2( 0.143304, 0.544351 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 0.171965, 0.669701 )
+extents = Vector2( 0.127671, 0.468371 )
 
 [node name="Level1" type="Node2D"]
 script = ExtResource( 8 )
 
 [node name="Background1" type="Sprite" parent="."]
-position = Vector2( 960, 540 )
+position = Vector2( 960, 539 )
 scale = Vector2( 191.9, 48.6818 )
 texture = ExtResource( 1 )
 
@@ -40,12 +88,14 @@ position = Vector2( 960, 540 )
 scale = Vector2( 191.9, 48.6818 )
 script = ExtResource( 2 )
 
-[node name="Sprite" type="Sprite" parent="Player1"]
-scale = Vector2( 0.00686573, 0.0275481 )
-texture = ExtResource( 3 )
+[node name="Sprite" type="AnimatedSprite" parent="Player1"]
+scale = Vector2( 0.00283568, 0.0117525 )
+frames = SubResource( 12 )
+animation = "Idle"
+frame = 6
+playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player1"]
-position = Vector2( 0, -0.0102711 )
 shape = SubResource( 1 )
 
 [node name="BulletSpawn" type="Position2D" parent="Player1"]

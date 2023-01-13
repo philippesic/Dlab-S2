@@ -17,6 +17,6 @@ func _on_Player1_onShoot():
 
 
 func _on_Level1_updateAmmo():
-	ammo += 2
+	ammo += 4
 	ammoText = str(ammo)
 	label.set_text("Ammo: " + ammoText)

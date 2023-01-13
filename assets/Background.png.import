@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/LeftHand.jpg-19d1e72fbe22fe0d61e8cec700943c88.stex"
+path="res://.import/Background.png-e8880a50f4091751eaed728281d3c21e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/LeftHand.jpg"
-dest_files=[ "res://.import/LeftHand.jpg-19d1e72fbe22fe0d61e8cec700943c88.stex" ]
+source_file="res://Assets/Background.png"
+dest_files=[ "res://.import/Background.png-e8880a50f4091751eaed728281d3c21e.stex" ]
 
 [params]
 
@@ -31,5 +31,5 @@ process/invert_color=false
 process/normal_map_invert_y=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0

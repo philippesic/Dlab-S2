@@ -9,7 +9,7 @@ signal onShoot
 
 onready var ammo = 20
 
-const SPEED = 400
+const SPEED = 420
 const ACCELERATION = 99999
 const FRICTION = 99999
 
@@ -71,4 +71,4 @@ func _on_DeathArea_area_entered(_area):
 	state = DEAD
 
 func _on_Level1_updateAmmo():
-	ammo += 2
+	ammo += 4

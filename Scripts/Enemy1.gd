@@ -2,6 +2,8 @@ extends KinematicBody2D
 
 var speed = 100
 
+var health = 3
+
 signal enemyKilled
 
 func _physics_process(delta):
@@ -12,5 +14,7 @@ func _physics_process(delta):
 
 
 func _on_Area2D_area_entered(_area):
-	emit_signal("enemyKilled")
-	queue_free()
+	health -= 1
+	if health == 0:
+		emit_signal("enemyKilled")
+		queue_free()

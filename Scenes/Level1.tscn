@@ -1,11 +1,9 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://Assets/Screenshot 2023-01-10 at 9.40.59 AM.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Background.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Player1.gd" type="Script" id=2]
 [ext_resource path="res://Assets/icon.png" type="Texture" id=3]
 [ext_resource path="res://Scripts/ScoreController.gd" type="Script" id=5]
-[ext_resource path="res://Assets/RightHand.jpg" type="Texture" id=6]
-[ext_resource path="res://Assets/LeftHand.jpg" type="Texture" id=7]
 [ext_resource path="res://Scripts/Level1.gd" type="Script" id=8]
 [ext_resource path="res://Scripts/Ammo.gd" type="Script" id=9]
 
@@ -75,16 +73,6 @@ margin_bottom = 41.0
 rect_scale = Vector2( 3, 3 )
 align = 1
 valign = 1
-
-[node name="Left" type="Sprite" parent="."]
-position = Vector2( 361, 1416 )
-scale = Vector2( 0.138889, 0.152604 )
-texture = ExtResource( 7 )
-
-[node name="Right" type="Sprite" parent="."]
-position = Vector2( 1449, 1410 )
-scale = Vector2( 0.1375, 0.145833 )
-texture = ExtResource( 6 )
 
 [node name="Ammo" type="Control" parent="."]
 margin_right = 347.0

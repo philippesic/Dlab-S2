@@ -1,7 +1,7 @@
 extends Node2D
 
 var spawn_timer = 0
-var spawn_interval = 1
+var spawn_interval = 1.2
 
 signal updateAmmo
 
@@ -14,7 +14,7 @@ func _process(delta):
 func spawn_enemy():
 	var enemy = load("res://Scenes/Enemy1.tscn").instance()
 	add_child(enemy)
-	enemy.position = Vector2(rand_range(0, get_viewport().size.x), 60)
+	enemy.position = Vector2(rand_range(550, 1350), 200)
 	enemy.connect("enemyKilled", self, "_on_enemy_died")
 	
 func _on_enemy_died():

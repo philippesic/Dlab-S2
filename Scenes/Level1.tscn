@@ -8,7 +8,7 @@
 [ext_resource path="res://Scripts/Ammo.gd" type="Script" id=9]
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 1101, 66.5 )
+extents = Vector2( 389.75, 35.25 )
 
 [sub_resource type="AtlasTexture" id=4]
 flags = 4
@@ -59,42 +59,47 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 0.143304, 0.544351 )
+extents = Vector2( 0.0573215, 0.205416 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 0.127671, 0.468371 )
+extents = Vector2( 0.0625324, 0.225957 )
 
 [node name="Level1" type="Node2D"]
 script = ExtResource( 8 )
 
 [node name="Background1" type="Sprite" parent="."]
-position = Vector2( 960, 539 )
+position = Vector2( 958, 419 )
+scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 1 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Background1"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Background1/StaticBody2D"]
-polygon = PoolVector2Array( -5.79469, -0.0410843, -4.9974, 0.0205402, -4.97655, -11.0308, 5.00261, -11.0924, 5.00261, 11.0924, -5.00261, 11.0924, -4.9974, 0.0205402, -5.79469, 0.0410824, -5.77905, 13.8656, 5.73215, 13.7012, 5.64356, -13.9066, -5.82074, -13.845 )
+position = Vector2( -1009.93, -17.5001 )
+scale = Vector2( 1.6906, 1 )
+polygon = PoolVector2Array( 20.6584, 0, 29.531, 0, 29.531, 557.5, 1165.23, 557.5, 1165.23, -522.5, 29.531, -522.5, 29.531, 0, 20.6584, 0, 22.1371, -535, 1172.62, -532.5, 1174.1, 572.5, 22.1371, 570, 23.6159, 2.5 )
 
 [node name="DeathArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathArea"]
-position = Vector2( 950, 1142.5 )
+position = Vector2( 955, 678 )
 shape = SubResource( 3 )
 
 [node name="Player1" type="KinematicBody2D" parent="."]
-position = Vector2( 960, 540 )
+position = Vector2( 958, 420 )
 scale = Vector2( 191.9, 48.6818 )
 script = ExtResource( 2 )
 
 [node name="Sprite" type="AnimatedSprite" parent="Player1"]
-scale = Vector2( 0.00283568, 0.0117525 )
+position = Vector2( 0.0260552, 0.0718957 )
+scale = Vector2( 0.00173702, 0.00616247 )
 frames = SubResource( 12 )
 animation = "Idle"
-frame = 4
+frame = 7
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player1"]
+position = Vector2( 0.0260553, 0.123249 )
 shape = SubResource( 1 )
 
 [node name="BulletSpawn" type="Position2D" parent="Player1"]
@@ -107,6 +112,7 @@ scale = Vector2( 0.00521105, 0.0205416 )
 [node name="Area2D" type="Area2D" parent="Player1"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player1/Area2D"]
+position = Vector2( 0.0260553, 0.102708 )
 shape = SubResource( 2 )
 
 [node name="ScoreController" type="Control" parent="."]
@@ -115,13 +121,11 @@ margin_bottom = 40.0
 script = ExtResource( 5 )
 
 [node name="Score" type="Label" parent="ScoreController"]
-margin_left = 1507.0
-margin_top = 13.0
-margin_right = 1641.0
-margin_bottom = 41.0
+margin_left = 1267.0
+margin_top = 214.0
+margin_right = 1287.0
+margin_bottom = 228.0
 rect_scale = Vector2( 3, 3 )
-align = 1
-valign = 1
 
 [node name="Ammo" type="Control" parent="."]
 margin_right = 347.0
@@ -129,11 +133,11 @@ margin_bottom = 74.0
 script = ExtResource( 9 )
 
 [node name="AmmoLabel" type="Label" parent="Ammo"]
-margin_left = 7.0
-margin_top = 31.0
-margin_right = 74.0
-margin_bottom = 62.0
-rect_scale = Vector2( 5, 5 )
+margin_left = 584.0
+margin_top = 210.0
+margin_right = 619.0
+margin_bottom = 224.0
+rect_scale = Vector2( 3, 3 )
 
 [connection signal="updateAmmo" from="." to="Player1" method="_on_Level1_updateAmmo"]
 [connection signal="updateAmmo" from="." to="Ammo" method="_on_Level1_updateAmmo"]

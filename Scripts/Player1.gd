@@ -9,7 +9,7 @@ signal onShoot
 
 onready var ammo = 20
 
-const SPEED = 420
+const SPEED = 210
 const ACCELERATION = 99999
 const FRICTION = 99999
 

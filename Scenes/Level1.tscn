@@ -91,19 +91,19 @@ scale = Vector2( 191.9, 48.6818 )
 script = ExtResource( 2 )
 
 [node name="Sprite" type="AnimatedSprite" parent="Player1"]
-position = Vector2( 0.0260552, 0.0718957 )
+position = Vector2( 0, 0.0821533 )
 scale = Vector2( 0.00173702, 0.00616247 )
 frames = SubResource( 12 )
 animation = "Idle"
-frame = 7
+frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player1"]
-position = Vector2( 0.0260553, 0.123249 )
+position = Vector2( -3.53903e-08, 0.12325 )
 shape = SubResource( 1 )
 
 [node name="BulletSpawn" type="Position2D" parent="Player1"]
-position = Vector2( 0, -1.84874 )
+position = Vector2( 0, -0.595705 )
 
 [node name="Target" type="KinematicBody2D" parent="Player1"]
 position = Vector2( 0, -11.0924 )
@@ -112,7 +112,7 @@ scale = Vector2( 0.00521105, 0.0205416 )
 [node name="Area2D" type="Area2D" parent="Player1"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player1/Area2D"]
-position = Vector2( 0.0260553, 0.102708 )
+position = Vector2( -3.53903e-08, 0.102708 )
 shape = SubResource( 2 )
 
 [node name="ScoreController" type="Control" parent="."]

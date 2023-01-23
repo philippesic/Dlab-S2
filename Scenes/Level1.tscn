@@ -82,7 +82,7 @@ polygon = PoolVector2Array( 20.6584, 0, 29.531, 0, 29.531, 557.5, 1165.23, 557.5
 [node name="DeathArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathArea"]
-position = Vector2( 955, 678 )
+position = Vector2( 959, 676 )
 shape = SubResource( 3 )
 
 [node name="Player1" type="KinematicBody2D" parent="."]
@@ -95,7 +95,6 @@ position = Vector2( 0, 0.0821533 )
 scale = Vector2( 0.00173702, 0.00616247 )
 frames = SubResource( 12 )
 animation = "Idle"
-frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player1"]

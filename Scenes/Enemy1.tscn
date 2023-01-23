@@ -62,6 +62,7 @@ script = ExtResource( 1 )
 scale = Vector2( 0.111864, 0.113559 )
 frames = SubResource( 10 )
 animation = "Idle"
+frame = 7
 playing = true
 
 [node name="Area2D" type="Area2D" parent="."]

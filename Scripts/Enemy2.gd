@@ -11,15 +11,15 @@ func _physics_process(delta):
 		
 	if turn2 == true:
 		while true:
-			direction = Vector2(-80, 0)
+			direction = Vector2(80, 0)
 			move_and_slide(direction * speed * delta)
 			yield(get_tree().create_timer(0.1), "timeout")
-			direction = Vector2(80, 0)
+			direction = Vector2(-80, 0)
 			move_and_slide(direction * speed * delta)
 			yield(get_tree().create_timer(0.1), "timeout")
 	else:
 		if turn1 == true:
-			direction = Vector2(-80, 0)
+			direction = Vector2(80, 0)
 		else:
 			direction = Vector2(0, -80) 
 			

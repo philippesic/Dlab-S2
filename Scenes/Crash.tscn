@@ -197,7 +197,7 @@ script = ExtResource( 3 )
 position = Vector2( 912, 560 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 32 )
-frame = 3
+frame = 16
 playing = true
 
 [node name="Crash2" type="AnimatedSprite" parent="."]

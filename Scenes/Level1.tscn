@@ -43,8 +43,9 @@ scale = Vector2( 191.9, 48.6818 )
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="Player1"]
-position = Vector2( 0, 0.0821533 )
-scale = Vector2( 0.00173702, 0.00616247 )
+position = Vector2( 0.00337498, 0.170649 )
+rotation = 3.14159
+scale = Vector2( 0.00125993, 0.00381009 )
 texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player1"]

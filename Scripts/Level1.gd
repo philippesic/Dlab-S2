@@ -21,7 +21,7 @@ func _on_enemy_died():
 	emit_signal("updateAmmo")
 
 func _ready():
-	yield(get_tree().create_timer(30), "timeout")
+	yield(get_tree().create_timer(3), "timeout")
 	get_tree().change_scene("res://Scenes/Level2.tscn")
 	queue_free()
 

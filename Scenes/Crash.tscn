@@ -200,20 +200,19 @@ script = ExtResource( 3 )
 position = Vector2( 912, 560 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 32 )
-frame = 7
+frame = 23
 playing = true
+
+[node name="Recomputingtext" type="Sprite" parent="."]
+position = Vector2( 960, 172 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 5 )
 
 [node name="Crash2" type="AnimatedSprite" parent="."]
 position = Vector2( 969, 543 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 36 )
-frame = 2
 playing = true
-
-[node name="Recomputingtext" type="Sprite" parent="."]
-position = Vector2( 960, 1298 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 5 )
 
 [node name="Sound1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )

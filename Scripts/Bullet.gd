@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 var velocity
-var speed = 600
+var speed = 800
 
 func _physics_process(delta):
 	move_and_collide(velocity.normalized() * delta * speed)

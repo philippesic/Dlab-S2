@@ -1,10 +1,11 @@
-[gd_scene load_steps=42 format=2]
+[gd_scene load_steps=43 format=2]
 
 [ext_resource path="res://Assets/Crash2.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Crash1.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/Crash.gd" type="Script" id=3]
 [ext_resource path="res://Audio/Sound1.mp3" type="AudioStream" id=4]
-[ext_resource path="res://Audio/output.wav" type="AudioStream" id=5]
+[ext_resource path="res://Assets/Recomputing.png" type="Texture" id=5]
+[ext_resource path="res://Audio/sound2.wav" type="AudioStream" id=6]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -199,17 +200,23 @@ script = ExtResource( 3 )
 position = Vector2( 912, 560 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 32 )
-frame = 29
+frame = 7
 playing = true
 
 [node name="Crash2" type="AnimatedSprite" parent="."]
 position = Vector2( 969, 543 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 36 )
+frame = 2
 playing = true
+
+[node name="Recomputingtext" type="Sprite" parent="."]
+position = Vector2( 960, 1298 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 5 )
 
 [node name="Sound1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
 
 [node name="Sound2" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 5 )
+stream = ExtResource( 6 )

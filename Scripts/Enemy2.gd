@@ -6,6 +6,9 @@ var turn2 = false
 var direction = Vector2(0,0)
 var speed = 120
 
+func _ready():
+	$Sprite.visible = true
+	$glitchsprite.visible = false
 
 func _physics_process(delta):
 		
@@ -32,3 +35,6 @@ func _on_Turn1_area_entered(area):
 
 func _on_Turn2_area_entered(area):
 	turn2 = true
+	yield(get_tree().create_timer(0.4), "timeout")
+	$Sprite.visible = false
+	$glitchsprite.visible = true

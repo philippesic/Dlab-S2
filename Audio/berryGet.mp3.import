@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/berryGet.mp3-53faaad3676791a764db6fc792b095dd.mp3str"
+
+[deps]
+
+source_file="res://Audio/berryGet.mp3"
+dest_files=[ "res://.import/berryGet.mp3-53faaad3676791a764db6fc792b095dd.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -19,3 +19,14 @@ texture = ExtResource( 3 )
 [node name="Sprite3" type="Sprite" parent="."]
 position = Vector2( 960, 729 )
 texture = ExtResource( 1 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 73.0
+margin_top = 419.0
+margin_right = 665.0
+margin_bottom = 467.0
+grow_vertical = 2
+rect_scale = Vector2( 3, 3 )
+text = "Disclaimer: This is a very early prototype.
+This is not the final gameplay concept, and any art and sound prototype is subject to change 
+(Because it will hurt to look at and listen to)"

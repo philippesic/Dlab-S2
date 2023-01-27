@@ -61,6 +61,7 @@ func shoot():
 	shot.position = $BulletSpawn.global_position
 	shot.velocity = $Target.global_position - shot.position
 	ammo -= 1
+	$BlastSound.play()
 
 
 func _on_Area2D_area_entered(_area):

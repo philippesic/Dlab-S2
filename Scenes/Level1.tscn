@@ -1,9 +1,11 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Assets/Background-export.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Player1.gd" type="Script" id=2]
-[ext_resource path="res://Assets/icon.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Player.png" type="Texture" id=3]
+[ext_resource path="res://Audio/blaster.mp3" type="AudioStream" id=4]
 [ext_resource path="res://Scripts/ScoreController.gd" type="Script" id=5]
+[ext_resource path="res://Assets/Arcade Machine.png" type="Texture" id=6]
 [ext_resource path="res://Scripts/Level1.gd" type="Script" id=8]
 [ext_resource path="res://Scripts/Ammo.gd" type="Script" id=9]
 
@@ -11,10 +13,10 @@
 extents = Vector2( 389.75, 35.25 )
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 0.0573215, 0.205416 )
+extents = Vector2( 0.0807712, 0.40056 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 0.0625324, 0.225957 )
+extents = Vector2( 0.0859823, 0.421103 )
 
 [node name="Level1" type="Node2D"]
 script = ExtResource( 8 )
@@ -43,17 +45,16 @@ scale = Vector2( 191.9, 48.6818 )
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="Player1"]
-position = Vector2( 0.00337498, 0.170649 )
-rotation = 3.14159
-scale = Vector2( 0.00125993, 0.00381009 )
+position = Vector2( -0.000777752, 0.119667 )
+scale = Vector2( 0.002, 0.008 )
 texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player1"]
-position = Vector2( -3.53903e-08, 0.12325 )
+position = Vector2( -0.00260496, 0.0924358 )
 shape = SubResource( 1 )
 
 [node name="BulletSpawn" type="Position2D" parent="Player1"]
-position = Vector2( 0, -0.595705 )
+position = Vector2( 0, -0.903829 )
 
 [node name="Target" type="KinematicBody2D" parent="Player1"]
 position = Vector2( 0, -11.0924 )
@@ -62,8 +63,11 @@ scale = Vector2( 0.00521105, 0.0205416 )
 [node name="Area2D" type="Area2D" parent="Player1"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player1/Area2D"]
-position = Vector2( -3.53903e-08, 0.102708 )
+position = Vector2( -0.00260544, 0.0924358 )
 shape = SubResource( 2 )
+
+[node name="BlastSound" type="AudioStreamPlayer" parent="Player1"]
+stream = ExtResource( 4 )
 
 [node name="ScoreController" type="Control" parent="."]
 margin_right = 40.0
@@ -75,6 +79,7 @@ margin_left = 1267.0
 margin_top = 214.0
 margin_right = 1287.0
 margin_bottom = 228.0
+grow_horizontal = 0
 rect_scale = Vector2( 3, 3 )
 
 [node name="Ammo" type="Control" parent="."]
@@ -88,6 +93,10 @@ margin_top = 210.0
 margin_right = 619.0
 margin_bottom = 224.0
 rect_scale = Vector2( 3, 3 )
+
+[node name="ArcadeMachine" type="Sprite" parent="."]
+position = Vector2( 959, 441 )
+texture = ExtResource( 6 )
 
 [connection signal="updateAmmo" from="." to="Player1" method="_on_Level1_updateAmmo"]
 [connection signal="updateAmmo" from="." to="Ammo" method="_on_Level1_updateAmmo"]
